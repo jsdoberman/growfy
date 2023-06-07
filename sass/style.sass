@@ -1,0 +1,947 @@
+@import "fonts"
+@import "null"
+@import "bem"
+@import "select-style"
+
+/* ======================================header */
+.header
+    min-height: 115px
+    padding: 38px 0
+    @media (max-width: 939.98px)
+        position: fixed
+        width: 100%
+        min-height: 93px
+        padding: 18px 0
+        background: rgba(129, 129, 139, 1)
+        z-index: 100
+
+    &__container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 20px
+
+    &__logo
+        width: 147px
+        height: 40px
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+        @media (max-width: 439.98px)
+            width: 40px
+            height: 40px
+            overflow: hidden
+            img
+                width: 147px
+                height: 40px
+    &__menu
+        flex: 1 1 auto
+
+    &__btn
+        background: #3D96F4
+        border-radius: 50px
+        font-weight: 500
+        font-size: 14px
+        line-height: 22px
+        padding: 16px 29px
+        letter-spacing: 2px
+        color: #FFFFFF
+        white-space: nowrap
+        @media (max-width: 939.98px)
+            margin-right: 80px
+/* ======================================main-menu */
+
+.main-menu
+
+    @media (max-width: 939.98px) //Скрываем блок для моба
+        position: absolute
+        left: -100%
+        top: 0
+        width: 100%
+        background: rgba(129, 129, 139, 1)
+        height: 100vh
+        z-index: 100
+        transition: all 0.3s
+        overflow: auto
+
+    &__block
+        display: flex
+        justify-content: flex-end
+        @media (max-width: 939.98px)
+            flex-direction: column
+            align-items: center
+            margin-top: 150px
+
+    &__item
+        margin-right: 50px
+        &:last-child
+            margin-right: 0
+
+        @media (max-width: 939.98px)
+            margin-right: 0
+
+    &__link
+        font-weight: 300
+        font-size: 16px
+        line-height: 26px
+        color: #FFFFFF
+        position: relative
+        span
+            display: inline-flex
+            justify-content: center
+            align-items: center
+            width: 30px
+            height: 30px
+            border-radius: 100%
+            background: rgba(129, 129, 139, 0.3)
+            margin-left: 6px
+        @media (max-width: 939.98px)
+            font-size: 28px
+            line-height: 48px
+
+        &::after            //СТИЛИ ПРИ НАВЕДЕНИИ НА ЭЛЕМЕНТ МЕНЮ
+            content: ''
+            display: block
+            position: absolute
+            bottom: 3px
+            left: 0
+            bottom: -11px
+            height: 3px
+            width: 0
+            background: #3D96F4
+            transition: all 0.3s
+
+        &:hover::after
+            width: calc( 100% + 10px )
+
+        &_active            //КЛАСС АКТИВНОСТИ ЭЛЕМЕНТА МЕНЮ  main-menu__link_active
+            color: #3D96F4
+
+.main-menu__link_active
+    left: 0
+/* ======================================main-section */
+
+.main-section
+    min-height: 745px
+    padding: 45px 0 20px
+    @media (max-width: 939.98px)
+        padding: 145px 0 20px
+
+    &__container
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 20px
+        @media (max-width: 850.98px)
+            grid-template-columns: 1fr
+            justify-items: center
+            gap: 40px
+
+    &__info
+        align-self: center
+        max-width: 624px
+
+    &__title
+        margin-bottom: 28px
+        position: relative
+        z-index: 5
+        &::before
+            content: ''
+            position: absolute
+            top: -24px
+            left: -34px
+            z-index: 3
+            background: url('../img/icons/dot.svg')
+            width: 122px
+            height: 122px
+
+    &__btns-block
+        display: flex
+        gap: 30px
+        @media (max-width: 850.98px)
+            justify-content: center
+            @media (max-width: 391.98px)
+                flex-direction: column
+
+    p
+        font-weight: 300
+        font-size: 18px
+        line-height: 27px
+        color: #9C9C9C
+        margin-bottom: 33px
+
+    &__img-block
+        display: flex
+        justify-self: end
+        @media (max-width: 850.98px)
+            justify-self: center
+
+    &__img
+        margin: 15px
+        max-width: 241px
+        overflow: hidden
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            transition: all 0.3s
+            &:hover
+                transform: scale(1)
+
+        &_m1
+            height: 423px
+            border-radius: 378px
+            transition: all 0.4s
+            &:hover
+                border-radius: 241.906px 241.906px 0px 241.906px
+            @media (max-width: 488.98px)
+                height: 300px
+        &_m2
+            height: 242px
+            border-radius: 241.906px 0px 241.906px 241.906px
+            transition: all 0.4s
+            &:hover
+                border-radius: 241.906px 241.906px 0px 241.906px
+
+        &_m3
+            height: 242px
+            border-radius: 241.906px 241.906px 0px 241.906px
+            transition: all 0.4s
+            &:hover
+                border-radius: 241.906px 0px 241.906px 241.906px
+        &_m4
+            height: 423px
+            border-radius: 378px
+            transition: all 0.4s
+            &:hover
+                border-radius: 241.906px 241.906px 0px 241.906px
+            @media (max-width: 488.98px)
+                height: 300px
+
+/* ======================================services */
+
+.services
+    padding: 80px 0 20px
+
+    &__container
+
+    &__brand-title
+        font-weight: 300
+        font-size: 14px
+        line-height: 22px
+        letter-spacing: 1px
+        text-transform: uppercase
+        color: #FFFFFF
+        text-align: center
+        margin-bottom: 25px
+
+    &__brands
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        align-items: center
+        box-shadow: inset 10px 10px 10px 10px #000
+        margin-bottom: 70px
+        @media (max-width: 449.98px)
+            justify-content: center
+
+        img
+            width: 210px
+
+    &__wrapper
+
+.services-info
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 50px
+    @media (max-width: 1080.98px)
+        grid-template-columns: 1fr
+
+    &__info
+        align-self: center
+
+    &__ser-btn
+        margin-bottom: 20px
+
+    &__title
+        margin-bottom: 15px
+
+    p
+        font-weight: 300
+        font-size: 18px
+        line-height: 27px
+        color: #9C9C9C
+        margin-bottom: 15px
+
+    &__card-block
+        display: flex
+        gap: 32px
+        @media (max-width: 1080.98px)
+            justify-content: center
+        @media (max-width: 701.98px)
+            flex-direction: column
+
+    &__card-block-item
+        display: flex
+        flex-direction: column
+        gap: 32px
+        &_top
+            padding-top: 45px
+        &_bottom
+            padding-bottom: 45px
+
+.item-card
+    background: rgba(129, 129, 139, 0.1)
+    border-radius: 30px
+    width: 315px
+    padding: 35px 25px
+    transition: all 0.3s
+    &:hover .item-card__icon-block
+        border-radius: 10px
+        transform: scale(1.1)
+    @media (max-width: 701.98px)
+        width: 100%
+
+    &_c1
+        &:hover
+            box-shadow: 0 0 40px 13px rgba(0, 136, 255, 0.1)
+    &_c2
+        &:hover
+            box-shadow: 0 0 40px 13px rgba(255, 110, 53, 0.1)
+    &_c3
+        &:hover
+            box-shadow: 0 0 40px 13px rgba(246, 202, 79, 0.1)
+    &_c4
+        &:hover
+            box-shadow: 0 0 40px 13px rgba(92, 201, 123, 0.1)
+
+    &__icon-block
+        width: 76px
+        height: 76px
+        border-radius: 20px
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-bottom: 16px
+        transition: all 0.3s
+
+        &_s1
+            background: rgba(0, 136, 255, 0.1)
+        &_s2
+            background: rgba(255, 110, 53, 0.1)
+        &_s3
+            background: rgba(246, 202, 79, 0.1)
+        &_s4
+            background: rgba(92, 201, 123, 0.1)
+
+        img
+            width: 52px
+            height: 52px
+    &__title
+        font-weight: 400
+        font-size: 19.2px
+        line-height: 27px
+        color: #FFFFFF
+        margin-bottom: 10px
+
+    &__descr
+        font-weight: 300
+        font-size: 16px
+        line-height: 24px
+        color: #81818B
+
+/* ======================================we-help */
+
+.we-help
+    min-height: 960px
+    padding: 80px 0 20px
+    @media (max-width: 469.98px)
+        padding: 20px 0 20px
+
+    &__container
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 50px
+        @media (max-width: 966.98px)
+            grid-template-columns: 1fr
+
+    &__img-block
+        display: flex
+        align-items: flex-end
+        position: relative
+        z-index: 3
+        @media (max-width: 966.98px)
+            gap: 60px
+            justify-content: center
+        @media (max-width: 430.98px)
+            gap: 30px
+        &::before
+            content: ''
+            position: absolute
+            bottom: 0px
+            left: -9px
+            z-index: 5
+            background: url('../img/icons/dot.svg')
+            width: 122px
+            height: 122px
+
+    &__big-img-block
+        flex: 0 1 423px
+        height: 785px
+        overflow: hidden
+        border-radius: 638px 0px 378px 378px
+        transition: all 0.4s
+        position: relative
+        z-index: 6
+        @media (max-width: 966.98px)
+            height: 460px
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            transition: all 0.4s
+
+            &:hover
+                //border-radius: 0px 638px 378px 378px
+                transform: scale(1.06)
+
+    &__small-img-block
+        flex: 0 1 182px
+        height: 182px
+        overflow: hidden
+        border-radius: 181.438px 181.438px 181.438px 0px
+        transition: all 0.4s
+        @media (max-width: 966.98px)
+            height: 282px
+            flex: 0 1 282px
+
+        @media (max-width: 430.98px)
+            height: 182px
+            flex: 0 1 182px
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+        &:hover
+            border-radius: 181.438px 181.438px 0px 181.438px
+                //transform: scale(1.06)
+
+    &__info-block
+        align-self: center
+
+        p
+            margin-bottom: 35px
+
+    &__btn
+        margin-bottom: 43px
+
+    &__title
+        margin-bottom: 40px
+
+    &__list
+
+    &__item-list
+        font-weight: 300
+        font-size: 16px
+        line-height: 24px
+        color: #9C9C9C
+        margin-bottom: 21px
+        position: relative
+        padding-left: 42px
+
+        &::before
+            content: ''
+            top: -5px
+            left: 0
+            position: absolute
+            width: 32px
+            height: 32px
+            background: url('../img/icons/done.svg') no-repeat
+            transition: all 0.3s
+
+        &:hover::before
+            box-shadow: 0 0 17px 2px rgba(255, 110, 53, 1)
+            transform: scale(1.15)
+            border-radius: 100%
+
+        &:last-child
+            margin-bottom: 0
+
+/* ======================================numb */
+.numb
+    min-height: 790px
+    padding: 90px 0 20px
+
+    &__container
+        display: grid
+        grid-template-columns: 748px minmax(250px, 499px)
+        gap: 32px
+        @media (max-width: 1072.98px)
+            grid-template-columns: 1fr
+
+    &__date
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 32px
+        @media (max-width: 1072.98px)
+            justify-items: center
+        @media (max-width: 784.98px)
+            grid-template-columns: 1fr
+
+    &__img
+        max-width: 499px
+        height: 588px
+        overflow: hidden
+        @media (max-width: 1072.98px)
+            display: none
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            border-radius: 0px 378px 378px 378px
+            transition: border-radius 0.3s
+
+        &:hover img
+            border-radius: 378px 0px 378px 378px
+
+.date-block
+    background: rgba(129, 129, 139, 0.1)
+    border-radius: 30px
+    width: 358px
+    min-height: 278px
+    padding: 40px
+    transition: box-shadow 0.3s
+    &:hover
+        box-shadow: 0 0 40px 13px rgb(255 110 53 / 10%)
+
+    @media (max-width: 784.98px)
+        width: 100%
+
+    &__title
+        font-weight: 500
+        font-size: 51.2px
+        line-height: 61px
+        color: #FFFFFF
+        margin-bottom: 32px
+
+    &__descr
+        font-weight: 300
+        font-size: 18px
+        line-height: 27px
+        color: #9C9C9C
+
+/* ======================================comments */
+.comments
+    padding: 80px 0 20px 0
+    @media (max-width: 1100.98px)
+        padding: 10px 0 20px 0
+
+    &__container
+
+    &__btn-top
+        margin-bottom: 25px
+
+    &__info-block
+        display: flex
+        justify-content: space-between
+        margin-bottom: 64px
+        @media (max-width: 1100.98px)
+            flex-direction: column
+
+    &__text-block
+        flex: 0 1 768px
+        @media (max-width: 1100.98px)
+            flex: 0 1 auto
+
+    &__title
+
+    &__descr
+
+    &__btn
+        flex: 0 1 auto
+        align-self: flex-end
+        margin-bottom: 0
+        @media (max-width: 1100.98px)
+            align-self: flex-start
+
+    &__block
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 48px
+        @media (max-width: 1386.98px)
+            grid-template-columns: repeat(2, 1fr)
+        @media (max-width: 950.98px)
+            grid-template-columns: 1fr
+
+.item-comments
+    background: rgba(129, 129, 139, 0.1)
+    border-radius: 30px
+    min-height: 568px
+    padding: 64px 40px
+    display: flex
+    flex-direction: column
+    @media (max-width: 1386.98px)
+        min-height: 350px
+        &:last-child
+            grid-column: 1/3
+
+    @media (max-width: 950.98px)
+        padding: 25px
+        &:last-child
+            grid-column: 1/2
+
+    &:hover .item-comments__img img
+        border-radius: 68.0312px 0px 68.0312px 68.0312px
+
+    &__name-block
+        display: flex
+        gap: 16px
+        margin-bottom: 43px
+
+    &__img
+        width: 68px
+        height: 68px
+        overflow: hidden
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            border-radius: 0px 68.0312px 68.0312px 68.0312px
+            transition: border-radius 0.4s
+
+    &__name-info
+
+    &__name
+        font-weight: 300
+        font-size: 16px
+        line-height: 24px
+        color: #FFFFFF
+        margin-bottom: 7px
+
+    &__sub-name
+        font-weight: 300
+        font-size: 14px
+        color: #9C9C9C
+
+    &__title
+        font-weight: 400
+        font-size: 32px
+        line-height: 45px
+        color: #FFFFFF
+        margin-left: 10px
+        span
+            position: relative
+            display: inline
+            &::before
+                content: '“'
+                position: absolute
+                top: 0px
+                left: -10px
+                display: inline
+
+            &::after
+                content: '“'
+                position: absolute
+                bottom: 0px
+                right: -10px
+                display: inline
+                transform: rotate(180deg)
+
+    &__descr
+        margin-top: 34px
+        font-weight: 300
+        font-size: 16px
+        line-height: 24px
+        color: #9C9C9C
+        margin-bottom: 34px
+        flex: 1 1 auto
+
+    &__rait
+
+/* ======================================news */
+
+.news
+    padding: 80px 0 20px 0
+
+    &__container
+
+    &__btn-top
+        margin-bottom: 25px
+
+    &__info-block
+        display: flex
+        justify-content: space-between
+        margin-bottom: 64px
+        @media (max-width: 878.98px)
+            flex-direction: column
+
+    &__text-block
+        flex: 0 1 768px
+        @media (max-width: 878.98px)
+            flex: 0 1 auto
+
+    &__title
+
+    &__descr
+
+    &__btn
+        flex: 0 1 auto
+        align-self: flex-end
+        margin-bottom: 0
+        flex: 0 1 768px
+        align-self: flex-start
+        flex: 0 0 auto
+
+    &__block
+        display: grid
+        grid-template-columns: repeat(3, 395px)
+        justify-content: space-between
+        @media (max-width: 1239.98px)
+            grid-template-columns: repeat(2, 395px)
+            gap: 40px
+            justify-content: center
+        @media (max-width: 856.98px)
+            grid-template-columns: 395px
+
+        @media (max-width: 420.98px)
+            grid-template-columns: 1fr
+
+.news-item
+    background: rgba(129, 129, 139, 0.1)
+    border-radius: 24px
+    display: flex
+    flex-direction: column
+
+    &:hover .news-item__img img
+        transform: scale(1.06)
+
+    &__img
+        position: relative
+        overflow: hidden
+        border-radius: 24px 24px 0 0
+        width: 100%
+        height: 195px
+        img
+            transition: all 0.3s
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    &__category
+        position: absolute
+        bottom: 0
+        left: 0
+        font-weight: 300
+        font-size: 14px
+        color: #FFFFFF
+        display: inline-block
+        background: rgba(129, 129, 139, 0.6)
+        border-radius: 0px 10px 0px 0px
+        padding: 10px 20px
+        transition: all 0.3s
+        &:hover
+            background: #000
+
+    &__text-block
+        padding: 26px 30px 40px 26px
+        display: flex
+        flex-direction: column
+        flex: 1 1 auto
+
+    &__date
+        font-weight: 300
+        font-size: 16px
+        line-height: 24px
+        color: rgba(129, 129, 139, 0.9)
+        margin-bottom: 20px
+
+    &__title
+        font-weight: 400
+        font-size: 19.2px
+        line-height: 27px
+        color: #FFFFFF
+
+    &__descr
+        font-weight: 300
+        font-size: 16px
+        line-height: 24px
+        color: #9C9C9C
+        margin-bottom: 21px
+        margin-top: 20px
+        flex: 1 1 auto
+
+    &__link
+        font-weight: 300
+        font-size: 14px
+        line-height: 22px
+        color: #3D96F4
+        transition: color 0.3s
+        &:hover
+            color: #fff
+
+/* ======================================business */
+
+.business
+    padding: 70px 0 20px
+
+    &__container
+        background: rgba(129, 129, 139, 0.1)
+        border-radius: 30px
+        width: 91%
+        min-height: 256px
+        display: flex
+        align-items: center
+        padding: 20px
+        @media (max-width: 988.98px)
+            flex-direction: column
+            gap: 30px
+
+    &__text
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        text-align: center
+        flex: 0 1 50%
+
+    &__title
+        margin-bottom: 16px
+
+    &__descr
+        font-weight: 300
+        font-size: 16px
+        line-height: 24px
+        color: #9C9C9C
+
+    &__btns
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 32px
+        flex: 0 1 50%
+        @media (max-width: 423.98px)
+            flex-direction: column
+
+/* ======================================footer */
+.footer
+    padding: 140px 0 50px
+    @media (max-width: 1250.98px)
+        padding: 100px 0 30px
+
+    &__container
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 70px
+        @media (max-width: 1250.98px)
+            grid-template-columns: repeat(2, 1fr)
+        @media (max-width: 876.98px)
+            grid-template-columns: 1fr
+        @media (max-width: 395.98px)
+            gap: 25px
+
+    &__logo-block
+
+    &__logo
+        width: 147px
+        height: 40px
+        margin-bottom: 32px
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    &__descr
+        font-weight: 300
+        font-size: 16px
+        line-height: 24px
+        color: #9C9C9C
+        margin-bottom: 32px
+
+    &__soc-block
+
+    &__soc-link
+        width: 36px
+        height: 36px
+        border-radius: 50%
+        margin-right: 16px
+        img
+            transition: box-shadow 0.3s
+            border-radius: 50%
+            &:last-child
+                margin-right: 0
+            &:hover
+                box-shadow: 0 0 13px 8px rgb(0 136 255 / 42%)
+
+    &__manu
+        display: flex
+        gap: 100px
+        @media (max-width: 1250.98px)
+            justify-self: center
+        @media (max-width: 876.98px)
+            justify-self: start
+
+        @media (max-width: 395.98px)
+            flex-direction: column
+            gap: 25px
+
+    &__manu-section
+
+    &__title-manu
+        font-weight: 500
+        font-size: 20px
+        line-height: 24px
+        letter-spacing: 1px
+        color: #FFFFFF
+        margin-bottom: 32px
+
+    &__menu-block
+
+    &__menu-item
+        margin-bottom: 24px
+
+    &__menu-link
+        font-weight: 300
+        font-size: 16px
+        line-height: 26px
+        color: #9C9C9C
+        transition: color 0.3s
+        &:hover
+            color: #3D96F4
+
+    &__subscribe
+        @media (max-width: 1250.98px)
+            grid-column: 1/3
+            justify-self: center
+        @media (max-width: 876.98px)
+            grid-column: 1/2
+            justify-self: start
+
+    &__form
+        display: flex
+        gap: 16px
+        flex-wrap: wrap
+
+    &__input
+        border: 1px solid rgba(129, 129, 139, 0.3)
+        border-radius: 50px
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 24px
+        display: flex
+        align-items: center
+        color: #fff
+        background: transparent
+        outline: none
+        padding: 14px 33px
+        &:placeholder
+            color: #999999
+
+        @media (max-width: 444.98px)
+            flex: 1 1 auto
+
+    &__btn
+        @media (max-width: 444.98px)
+            flex: 1 1 auto

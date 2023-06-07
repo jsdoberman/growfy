@@ -1,0 +1,79 @@
+/* ======================================hamburger */
+.hamburger
+    display: none
+    position: absolute
+    top: 30px
+    right: 30px
+    align-items: flex-end
+    flex-direction: column
+    cursor: pointer
+    z-index: 2000
+    transition: all 0.3s
+    @media (max-width: 939.98px)
+        display: flex
+
+    &__item
+        margin-bottom: 4px
+        border-radius: 3px
+        background: #FF9C08
+        height: 4px
+
+    &__item:nth-child(1)
+        width: 45px
+
+    &__item:nth-child(2)
+        width: 35px
+
+    &__item:nth-child(3)
+        width: 25px
+
+    &__item:last-child
+        margin-bottom: 0
+
+.hamburger_close
+    align-items: flex-start
+
+    .hamburger__item
+        background: #000
+
+/* ==============================Движение вверх */
+.to-top_dote
+    transform: translateY(100px)
+    opacity: 0
+
+.to-top
+    transition: all 1s
+    transform: translateY(0)
+    opacity: 1
+
+/* ==============================Движение слева на право */
+
+.left-to-right_dote
+    transform: translateX(-100px)
+    opacity: 0
+
+.left-to-right
+    transition: all 1s
+    transform: translateX(0%)
+    opacity: 1
+
+/* ==============================Движение справа на лево */
+
+.right-to-left_dote
+    transform: translateX(100px)
+    opacity: 0
+
+.right-to-left
+    transition: all 1s
+    transform: translateX(0%)
+    opacity: 1
+
+/* ==============================Движение Поворот */
+.rotate_dote
+    transform: rotate(15deg)
+    opacity: 0
+
+.rotate
+    transition: all 0.5s
+    transform: rotate(0)
+    opacity: 1
